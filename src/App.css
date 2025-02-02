@@ -18,7 +18,7 @@ body {
   background-color: #181818;
   color:#E5E5E5;
   font-size: 13px;
-  overflow: hidden;
+  /* overflow: hidden; */
   -webkit-overflow-scrolling: touch;
 }
 
@@ -34,7 +34,7 @@ body {
   text-align: center;
   position: relative;
   box-sizing: border-box;
-  overflow:hidden;
+  /* overflow:hidden; */
 }
 
 .height {
@@ -68,7 +68,7 @@ body {
   top: 0;
   left: 0;
   width: 100vw;
-  height: 100vh;
+  height: 100dvh;
   background: #181818;
   display: flex;
   justify-content: center;
@@ -94,5 +94,6 @@ body {
   font-weight: bold;
   color: #E5E5E5;
 }
+
 
 

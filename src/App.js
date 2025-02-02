@@ -1,3 +1,4 @@
+
 import gsap from 'gsap';
 import { ScrollTrigger, ScrollToPlugin } from 'gsap/all';
 import Lenis from '@studio-freight/lenis';
@@ -88,38 +89,64 @@ function App() {
 }, []);
 
   //scroll
+  // useEffect(() => {
+  //   lenisRef.current = new Lenis({
+  //     smooth: true,
+  //     infinite: true,
+  //     duration: 1,
+  //     easing: (t) => 1 - Math.pow(1 - t, 4),
+  //     wrapper: document.body
+  // });
+
+  // const lenis = lenisRef.current;
+  
+  // lenis.on('scroll', ScrollTrigger.update);
+  // gsap.ticker.lagSmoothing(0);
+  
+  // function raf(time) {
+  //     lenis.raf(time);
+  //     requestAnimationFrame(raf);
+  // }
+  
+  // requestAnimationFrame(raf);
+
+  // return () => {
+  //   lenis.destroy(); // Cleanup Lenis instance
+  //   ScrollTrigger.getAll().forEach(trigger => trigger.kill()); // Cleanup ScrollTriggers
+  // };
+
+  // }, []); 
+
   useEffect(() => {
-    // Check if device is mobile
-    const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
-
-    lenisRef.current = new Lenis({
-      smooth: !isMobile, // Disable smooth scroll on mobile
-      infinite: true,
-      duration: isMobile ? 0.5 : 1, // Shorter duration on mobile
-      easing: (t) => 1 - Math.pow(1 - t, 5), // Slightly adjusted easing
-      wrapper: document.body,
-      touchMultiplier: 2, // Better touch response
-      wheelMultiplier: 1,
-      touchInertiaMultiplier: 1.5,
-      gestureOrientation: 'vertical'
-    });
-
-    const lenis = lenisRef.current;
+    // Check if the device is mobile
+    const isMobile = window.innerWidth <= 768;
+  
+    if (!isMobile) {
+      lenisRef.current = new Lenis({
+        smooth: true,
+        infinite: true,
+        duration: 1,
+        easing: (t) => 1 - Math.pow(1 - t, 4),
+        wrapper: document.body
+      });
+  
+      const lenis = lenisRef.current;
     
-    lenis.on('scroll', ScrollTrigger.update);
-    gsap.ticker.lagSmoothing(0);
+      lenis.on('scroll', ScrollTrigger.update);
+      gsap.ticker.lagSmoothing(0);
     
-    function raf(time) {
-      lenis.raf(time);
+      function raf(time) {
+          lenis.raf(time);
+          requestAnimationFrame(raf);
+      }
+    
       requestAnimationFrame(raf);
+  
+      return () => {
+        lenis.destroy(); // Cleanup Lenis instance
+        ScrollTrigger.getAll().forEach(trigger => trigger.kill()); // Cleanup ScrollTriggers
+      };
     }
-    
-    requestAnimationFrame(raf);
-
-    return () => {
-      lenis.destroy();
-      ScrollTrigger.getAll().forEach(trigger => trigger.kill());
-    };
   }, []);
 
   return (
