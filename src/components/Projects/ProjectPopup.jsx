@@ -37,6 +37,21 @@ export const ProjectPopup = ({ project, onClose }) => {
     );
   };
 
+  const handleImageClick = (e) => {
+    e.stopPropagation();
+    // Get click position relative to image width
+    const rect = e.currentTarget.getBoundingClientRect();
+    const x = e.clientX - rect.left;
+    
+    // If click is on the left side of image, go to previous image
+    // If click is on the right side, go to next image
+    if (x < rect.width / 2) {
+      prevImage(e);
+    } else {
+      nextImage(e);
+    }
+  };
+
   return (
     <div className="container">
       <div className="project-popup-overlay show" onClick={onClose}></div>
@@ -58,15 +73,17 @@ export const ProjectPopup = ({ project, onClose }) => {
           ) : (
             <div className="carousel-container">
               <button className="carousel-arrow left" onClick={prevImage}>
-                <i class="fa-duotone fa-solid fa-arrow-left fa-sm"></i>
+                <i className="fa-duotone fa-solid fa-arrow-left fa-sm"></i>
               </button>
-                <img
-                  className="project__img"
-                  src={images[currentImageIndex]}
-                  alt="project"
-                />
+              <img
+                className="project__img"
+                src={images[currentImageIndex]}
+                alt="project"
+                onClick={handleImageClick}
+                style={{ cursor: 'pointer' }}
+              />
               <button className="carousel-arrow right" onClick={nextImage}>
-                <i class="fa-duotone fa-solid fa-arrow-right fa-sm"></i>
+                <i className="fa-duotone fa-solid fa-arrow-right fa-sm"></i>
               </button>
             </div>
           )}

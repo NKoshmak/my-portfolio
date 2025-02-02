@@ -2,36 +2,51 @@ import classNames from "classnames";
 import { useState } from "react";
 import { ProjectPopup } from './ProjectPopup.jsx';
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { createPortal } from 'react-dom';
 
 export const ProjectCard = ({ project }) => {
   const [isPopupVisible, setIsPopupVisible] = useState(false);
 
-  const togglePopup = () => {
+  const togglePopup = (e) => {
+    // Don't close if clicking inside the popup
+    if (e && (e.target.closest('.carousel-arrow') || e.target.closest('.project__img'))) {
+      e.stopPropagation();
+      return;
+    }
+    
     setIsPopupVisible(!isPopupVisible);
 
     if (!isPopupVisible) {
       document.body.style.overflow = "hidden";
-      ScrollTrigger.getAll().forEach((trigger) => trigger.disable()); // Pause GSAP animations
+      ScrollTrigger.getAll().forEach((trigger) => trigger.disable());
     } else {
-      document.body.style.overflow = ""; // Re-enable scrolling
-      ScrollTrigger.getAll().forEach((trigger) => trigger.enable()); // Resume GSAP animations
+      document.body.style.overflow = "";
+      ScrollTrigger.getAll().forEach((trigger) => trigger.enable());
     }
   };
 
   return (
-    <div 
-      className={classNames('project-card', { 'large': project.isLarge })} 
-      onClick={togglePopup}
-    >
-      <img src={project.image1} alt={project.name} className="project-image" />
-      <div className="project-details">
-        <h3 className="project-name">{project.name}</h3>
-        <p className="project-year">{project.year}</p>
+    <>
+      <div 
+        className={classNames('project-card', { 'large': project.isLarge })} 
+        onClick={togglePopup}
+      >
+        <img src={project.image1} alt={project.name} className="project-image" />
+        <div className="project-details">
+          <h3 className="project-name">{project.name}</h3>
+          <p className="project-year">{project.year}</p>
+        </div>
       </div>
 
-      {isPopupVisible && (
-        <ProjectPopup project={project} onClose={togglePopup} />
+      {isPopupVisible && createPortal(
+        <div className="project-popup-overlay" onClick={togglePopup}>
+          <ProjectPopup 
+            project={project} 
+            onClose={togglePopup} 
+          />
+        </div>,
+        document.body
       )}
-    </div>
+    </>
   );
 };
