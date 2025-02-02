@@ -21,7 +21,7 @@ function App() {
     let loaderDuration = sessionStorage.getItem("visited") !== null ? 4 : 10;
 
     if (sessionStorage.getItem("visited") !== null) {
-      counter.value = 30;
+      counter.value = 50;
     }
     sessionStorage.setItem("visited", "true");
 
@@ -89,34 +89,6 @@ function App() {
 }, []);
 
   //scroll
-  // useEffect(() => {
-  //   lenisRef.current = new Lenis({
-  //     smooth: true,
-  //     infinite: true,
-  //     duration: 1,
-  //     easing: (t) => 1 - Math.pow(1 - t, 4),
-  //     wrapper: document.body
-  // });
-
-  // const lenis = lenisRef.current;
-  
-  // lenis.on('scroll', ScrollTrigger.update);
-  // gsap.ticker.lagSmoothing(0);
-  
-  // function raf(time) {
-  //     lenis.raf(time);
-  //     requestAnimationFrame(raf);
-  // }
-  
-  // requestAnimationFrame(raf);
-
-  // return () => {
-  //   lenis.destroy(); // Cleanup Lenis instance
-  //   ScrollTrigger.getAll().forEach(trigger => trigger.kill()); // Cleanup ScrollTriggers
-  // };
-
-  // }, []); 
-
   useEffect(() => {
     // Check if the device is mobile
     const isMobile = window.innerWidth <= 768;
