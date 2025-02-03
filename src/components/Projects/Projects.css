@@ -315,3 +315,55 @@
   }
 }
 
+/* Landscape orientation styles */
+@media (max-height: 600px) and (orientation: landscape) {
+  .project-popup {
+    height: 100dvh;
+    padding: 15px 30px;
+  }
+
+  .project__info {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    align-items: start;
+  }
+
+  .carousel-container {
+    height: 80dvh;
+  }
+
+  .project__img {
+    height: 100%;
+    object-fit: contain;
+  }
+
+  .project__details {
+    max-height: 80dvh;
+    overflow-y: auto;
+    padding-right: 10px;
+  }
+
+  .project-popup-buttons {
+    position: static;
+    padding: 10px 0;
+  }
+
+  .nav {
+    height: 40px;
+  }
+
+  .footer {
+    padding: 10px 0;
+  }
+}
+
+/* Fullscreen image in landscape */
+@media (max-height: 600px) and (orientation: landscape) {
+  .carousel-container.fullscreen .project__img {
+    height: 100dvh;
+    width: auto;
+    max-width: 100dvw;
+  }
+}
+

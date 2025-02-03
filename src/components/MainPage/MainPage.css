@@ -113,3 +113,25 @@
   font-size: 1.1rem;
  }
  }
+
+/* Add landscape orientation styles */
+/* @media (max-height: 600px) and (orientation: landscape) {
+  .main-page {
+    min-height: 100dvh;
+  }
+
+  .text__content {
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 20px 0;
+  }
+
+  .main-page__name {
+    font-size: 14vw;
+    line-height: 1.2;
+  }
+
+  .text__content__info {
+    width: 30%;
+  }
+} */

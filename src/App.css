@@ -57,6 +57,26 @@ body {
   }
 }
 
+/* Add landscape orientation styles */
+@media (max-height: 600px) and (orientation: landscape) {
+  .panel {
+    min-height: 100dvh;
+  }
+
+  .height {
+    height: 250dvh;
+  }
+
+  .loader_number {
+    font-size: 4rem;
+    bottom: 40px;
+  }
+
+  .loader_progress {
+    bottom: 20px;
+  }
+}
+
 .text__content-end {
   opacity: 0.8;
 }
