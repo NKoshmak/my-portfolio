@@ -14,7 +14,7 @@
 
 @media (min-width: 1700px) {
   .projects__list {
-    padding-inline: 200px;
+    padding-inline: 400px;
   }
 }
 
@@ -180,7 +180,7 @@
   left: 0;
   width: 100vw;
   height: 100vh;
-  background-color: rgba(24, 24, 24, 1);
+  background-color: rgba(24, 24, 24, 0.9);
   z-index: 9996;
 }
   
