@@ -8,7 +8,7 @@ export default function MainPage() {
     <div className="main-page" id="main">
       <div className="text__content">
         <p className="text__content__info">
-        Hey there! I’m a developer and designer based in Canada, and I absolutely love building cool stuff for the web.
+        Hey there! I’m a Frontend developer, and I absolutely love building cool stuff for the web.
         I’m teaming up with clients and agencies from all over to turn ideas into something awesome.
         </p>
         <div className="development">
