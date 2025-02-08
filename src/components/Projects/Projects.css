@@ -220,15 +220,22 @@
   list-style: none;
 }
 
-.video-container {
+.video__container {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   width: 100%;
-  height: auto;  
-} 
+  height: auto;
+  overflow: hidden;
+}
 
 .video {
   width: 70%;
   height: auto;
   object-fit: cover;
+  display: block;
+  margin: 0 auto;
 }
 
 /* Arrows */
@@ -365,6 +372,27 @@
     height: 100dvh;
     width: auto;
     max-width: 100dvw;
+  }
+}
+
+/* Make sure video container matches carousel container styles */
+.carousel-container,
+.video__container {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: auto;
+  overflow: hidden;
+}
+
+@media (min-width: 768px) {
+  .project__img,
+  .video {
+    width: 90%;
+    max-width: 800px;
+    margin-inline: auto;
   }
 }
 

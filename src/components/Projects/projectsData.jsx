@@ -29,7 +29,7 @@ export const projects = [
     video: require('../../assets/images/todo/todo.mov'),
     techsteck: 'Typescript, HTML5/CSS, SASS, React',
     description: 'This is a task management application designed and developed to provide a seamless experience for creating, updating, and managing tasks. The app is built using React and TypeScript and integrates with an API for dynamic task handling.',
-    liveLink: "https://nkoshmak.github.io/task-management-app/",
+    liveLink: "https://task-management-app-iota-roan.vercel.app",
     codeLink: "https://github.com/NKoshmak/task-management-app"
   },
   {
@@ -65,7 +65,7 @@ export const projects = [
     video: null,
     techsteck: 'JavaScript, HTML/CSS, SASS, BEM',
     description: 'This is a responsive landing page designed and developed to meet the requirements, including key features such as smooth scroll, hover effects, and interactive elements.',
-    liveLink: "https://nkoshmak.github.io/kickstarter_landing/",
+    liveLink: "https://kickstarter-landing.vercel.app",
     codeLink: "https://github.com/NKoshmak/kickstarter_landing",
   },
   {
@@ -95,7 +95,7 @@ export const projects = [
     video: require('../../assets/images/2048/record2048.mov'),
     techsteck: 'JavaScript, HTML/CSS, SASS',
     description: 'A dynamic web-based clone of the popular 2048 game, built for seamless gameplay and responsiveness. Features include intuitive tile sliding, smooth animations for merging tiles, and real-time score updates. Designed to provide an engaging and interactive user experience across both desktop and mobile platforms.',
-    liveLink: "https://nkoshmak.github.io/2048-game/",
+    liveLink: "https://2048-game-phi-two.vercel.app",
     codeLink: "https://github.com/NKoshmak/2048-game",
   },
 ];
