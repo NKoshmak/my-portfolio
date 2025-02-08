@@ -1,0 +1,41 @@
+{
+  "files": {
+    "main.css": "/my-portfolio/static/css/main.e2fcfcb6.css",
+    "main.js": "/my-portfolio/static/js/main.3c24b8d4.js",
+    "static/media/todo.mov": "/my-portfolio/static/media/todo.bc428ae72f9d1d6b9611.mov",
+    "static/media/bo1.jpg": "/my-portfolio/static/media/bo1.4ef4dda00e486bfa3eb9.jpg",
+    "static/media/record2048.mov": "/my-portfolio/static/media/record2048.a97f129e93931e1e5f00.mov",
+    "static/media/bo3.jpg": "/my-portfolio/static/media/bo3.b87471862e2dff72740b.jpg",
+    "static/media/k3.jpg": "/my-portfolio/static/media/k3.baf954684a0353e6454c.jpg",
+    "static/media/fa-solid-900.ttf": "/my-portfolio/static/media/fa-solid-900.2582b0e4bcf85eceead0.ttf",
+    "static/media/k4.jpg": "/my-portfolio/static/media/k4.4c329d2f74bbf8406ca3.jpg",
+    "static/media/bo2.jpg": "/my-portfolio/static/media/bo2.3e433aa15d0decd61d41.jpg",
+    "static/media/air2.jpg": "/my-portfolio/static/media/air2.f08685d12d6e8d4609fa.jpg",
+    "static/media/k1.jpg": "/my-portfolio/static/media/k1.954eb5fe1f921d6a7bbb.jpg",
+    "static/media/k2.jpg": "/my-portfolio/static/media/k2.d81e5cfd28514b67f166.jpg",
+    "static/media/air1.jpg": "/my-portfolio/static/media/air1.3ea2cf34e2b48b748c3a.jpg",
+    "static/media/air4.jpg": "/my-portfolio/static/media/air4.e3c6fac26a41a7715c0d.jpg",
+    "static/media/air3.jpg": "/my-portfolio/static/media/air3.1b841861ebe625a3bafc.jpg",
+    "static/media/fa-brands-400.ttf": "/my-portfolio/static/media/fa-brands-400.1815e00441357e01619e.ttf",
+    "static/media/air6.jpg": "/my-portfolio/static/media/air6.2aba413eac7aee4b63df.jpg",
+    "static/media/fa-solid-900.woff2": "/my-portfolio/static/media/fa-solid-900.2463b90d9a316e4e5294.woff2",
+    "static/media/air5.jpg": "/my-portfolio/static/media/air5.6602fd274fde032ef19f.jpg",
+    "static/media/k5.jpg": "/my-portfolio/static/media/k5.2244cfdcf48192e162aa.jpg",
+    "static/media/bo4.jpg": "/my-portfolio/static/media/bo4.8103b932b056a593420f.jpg",
+    "static/media/todo1.jpg": "/my-portfolio/static/media/todo1.6b64a53c3417ab68e256.jpg",
+    "static/media/game1.jpg": "/my-portfolio/static/media/game1.14c6bf547990fd40e5af.jpg",
+    "static/media/fa-brands-400.woff2": "/my-portfolio/static/media/fa-brands-400.c210719e60948b211a12.woff2",
+    "static/media/fa-regular-400.ttf": "/my-portfolio/static/media/fa-regular-400.914997e1bdfc990d0897.ttf",
+    "static/media/Uncut-Sans-Regular.otf": "/my-portfolio/static/media/Uncut-Sans-Regular.25fbf1b50a81789448db.otf",
+    "static/media/fa-regular-400.woff2": "/my-portfolio/static/media/fa-regular-400.89999bdf5d835c012025.woff2",
+    "static/media/fa-v4compatibility.ttf": "/my-portfolio/static/media/fa-v4compatibility.da94ef451f4969af06e6.ttf",
+    "static/media/fa-v4compatibility.woff2": "/my-portfolio/static/media/fa-v4compatibility.ea8f94e1d22e0d35ccd4.woff2",
+    "index.html": "/my-portfolio/index.html",
+    "main.e2fcfcb6.css.map": "/my-portfolio/static/css/main.e2fcfcb6.css.map",
+    "main.3c24b8d4.js.map": "/my-portfolio/static/js/main.3c24b8d4.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.e2fcfcb6.css",
+    "static/js/main.3c24b8d4.js"
+  ]
+}
