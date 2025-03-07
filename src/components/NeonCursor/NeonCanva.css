@@ -1,0 +1,13 @@
+.neon-cursor {
+  position: fixed;
+  width: 100px;
+  height: 100px;
+  background: radial-gradient(circle, rgba(100, 255, 218, 0.4) 10%, transparent 60%);
+  pointer-events: none;
+  filter: blur(30px);
+  transform: translate(-50%, -50%);
+  transition: transform 0.05s linear;
+  z-index: 9999;
+}
+
+

@@ -7,19 +7,18 @@ export const ProjectPopup = ({ project, onClose }) => {
 
   useEffect(() => {
     if (!project.video) {
-      // Animate the carousel image
       gsap.fromTo(
         ".carousel-container img",
         { opacity: 0 }, // Initial state
-        { opacity: 1, scale: 1, duration: 3 } // Final state: fade in and scale to normal
+        { opacity: 1, scale: 1, duration: 3 } 
       );
     }
 
     // Animate the project details on load
     gsap.fromTo(
       ".project__details",
-      { opacity: 0, yPercent: 100 }, // Initial state (invisible and slightly translated)
-      { opacity: 1, yPercent: 0, duration: 1.6 } // Final state: fully visible and in place
+      { opacity: 0, yPercent: 100 }, 
+      { opacity: 1, yPercent: 0, duration: 1.6 } 
     );
   }, [project.video]);
 
@@ -39,12 +38,9 @@ export const ProjectPopup = ({ project, onClose }) => {
 
   const handleImageClick = (e) => {
     e.stopPropagation();
-    // Get click position relative to image width
     const rect = e.currentTarget.getBoundingClientRect();
     const x = e.clientX - rect.left;
-    
-    // If click is on the left side of image, go to previous image
-    // If click is on the right side, go to next image
+
     if (x < rect.width / 2) {
       prevImage(e);
     } else {
@@ -120,7 +116,8 @@ export const ProjectPopup = ({ project, onClose }) => {
           </div>
         </div>
         <div className="footer">
-          <h4 className="footer__name">Nataliia Koshmak</h4>
+          <h4 className="footer__name">Natalia Koshmak</h4>
+          <span>&copy; {new Date().getFullYear()} Copyright</span>
             <a
               className="text__content__link footer__link"
               href="mailto:koshmaknatalia@gmail.com"

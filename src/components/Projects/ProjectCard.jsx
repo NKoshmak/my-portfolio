@@ -8,7 +8,6 @@ export const ProjectCard = ({ project }) => {
   const [isPopupVisible, setIsPopupVisible] = useState(false);
 
   const togglePopup = (e) => {
-    // Don't close if clicking inside the popup
     if (e && (e.target.closest('.carousel-arrow') || e.target.closest('.project__img'))) {
       e.stopPropagation();
       return;
@@ -34,7 +33,6 @@ export const ProjectCard = ({ project }) => {
         <img src={project.image1} alt={project.name} className="project-image" />
         <div className="project-details">
           <h3 className="project-name">{project.name}</h3>
-          <p className="project-year">{project.year}</p>
         </div>
       </div>
 

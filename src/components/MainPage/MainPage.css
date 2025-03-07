@@ -1,5 +1,6 @@
 @import '@fortawesome/fontawesome-free/css/all.css';
 
+
 .main-page {
   position: relative;
   height: 100dvh;
@@ -10,12 +11,6 @@
   overflow: hidden;
   opacity: 1;
   visibility: inherit;
-}
-
-@media (min-width: 1700px) {
-  .main-page {
-    padding-inline: 400px;
-  }
 }
 
  .text__content {
@@ -34,10 +29,6 @@
   text-align: left;
  }
 
- .development__title {
-  opacity: 0.7;
- }
-
  .development__list {
   list-style-type: none;
  }
@@ -49,7 +40,7 @@
  .main__name {
   overflow: hidden;
   width: 100%;
-  opacity: 0.8;
+  color:#94A3B8;
  }
 
  .main-page__name {
@@ -65,15 +56,15 @@
 
  .text__content__link {
   color: inherit;
-  opacity: 0.8;
   cursor: pointer;
+  color:#5EEAD4;
+  font-size: 0.8rem;
+  
  }
 
  .text__content__link:hover,
  .text__content__link:focus {
-   color: #ff7466;
-   transform: scale(1.1);
-   transition: transform 0.5s ease;
+   color: #BB86FC;;
  } 
 
  .icons {
@@ -82,14 +73,26 @@
   gap: 10px;
  }
 
+ .get_in_touch {
+  margin-top: 20px;
+ }
+
+ .top__icons {
+  margin-top: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+ }
+
  .fa-linkedin-in,
  .fa-github {
-   color: #E5E5E5;
+   color: #94A3B8;
  }
 
  .fa-linkedin-in:hover,
  .fa-github:hover {
-  color: #ff7466;
+  /* color: #ff7466; */
+  color: #BB86FC;
   transform: scale(1.2);
   transition: transform 0.5s ease;
  }

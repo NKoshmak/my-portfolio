@@ -1,16 +1,15 @@
 
+import CodeEditor from '../CodeBackground/CodeBackground';
+import NeonTrail from '../NeonCursor/NeonTrail';
 import './MainPage.css';
 
 export default function MainPage() {
-
   return (
   <div>
+    <NeonTrail />
+    
     <div className="main-page" id="main">
       <div className="text__content">
-        <p className="text__content__info">
-        Hey there! I’m a Frontend developer, and I absolutely love building cool stuff for the web.
-        I’m teaming up with clients and agencies from all over to turn ideas into something awesome.
-        </p>
         <div className="development">
           <h2 className="development__title">Skills</h2>
           <ul className="development__list">
@@ -18,17 +17,21 @@ export default function MainPage() {
             <li>Javascript</li>
             <li>React</li>
             <li>Typescript</li>
+            <li>Next.js</li>
           </ul>
-        </div>
 
-        <div className="icons">
+          <div className="get_in_touch">
           <a
           className="text__content__link"
           href="mailto:koshmaknatalia@gmail.com"
           >
           Get in touch
-          </a>
-          <a 
+          </a>        
+        </div>
+        </div>
+
+        <div className="top__icons">
+        <a 
             href="https://www.linkedin.com/in/nataliia-k-8457b530a/"
             target='blank'
           >
@@ -39,6 +42,12 @@ export default function MainPage() {
             <i class="fa-brands fa-github fa-2xl"></i>
           </a>
         </div>
+
+       
+      </div>
+
+      <div>
+        <CodeEditor />
       </div>
 
       <div className="main__name">
