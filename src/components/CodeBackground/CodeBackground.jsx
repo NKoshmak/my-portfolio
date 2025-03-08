@@ -130,7 +130,7 @@ const CodeSnippet = () => {
         wrapLongLines={true}
       >
         {`
-  const getProfileData = () => {
+  export const getProfileData = () => {
     return (
     <div>
       <h1>
@@ -151,7 +151,9 @@ const CodeSnippet = () => {
       </p>
     </div>
     ); 
-  };`}
+  };
+
+  `}
       </SyntaxHighlighter>
     </div>
   );
