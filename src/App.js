@@ -7,7 +7,6 @@ import './App.css';
 import MainPage from './components/MainPage/MainPage.jsx';
 import Projects from './components/Projects/Projects.jsx';
 import NeonCanvas from './components/NeonCursor/NeonCanva.jsx';
-import CodeEditor from './components/CodeBackground/CodeBackground.jsx';
 
 gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
 
