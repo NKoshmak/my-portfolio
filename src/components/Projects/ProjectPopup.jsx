@@ -12,13 +12,30 @@ export const ProjectPopup = ({ project, onClose }) => {
   useEffect(() => {
     const popup = popupRef.current;
     const overlay = overlayRef.current;
+    
+    // Two points for animation
+    const startPoint = {
+      y: window.innerHeight,
+      opacity: 0,
+      scale: 0.8
+    };
+    
+    const endPoint = {
+      y: 0,
+      opacity: 1,
+      scale: 1
+    };
 
-    // Initial positions (start point)
-    const startScale = 0.3;
-    const endScale = 1;
+    // Set initial position
+    gsap.set(popup, {
+      y: startPoint.y,
+      opacity: startPoint.opacity,
+      scale: startPoint.scale
+    });
 
-    // Create timeline for coordinated animation
-    const tl = gsap.timeline();
+    const tl = gsap.timeline({
+      defaults: { ease: "power3.out" }
+    });
 
     // Animate overlay
     tl.fromTo(overlay, 
@@ -26,27 +43,15 @@ export const ProjectPopup = ({ project, onClose }) => {
       { opacity: 1, duration: 0.3 }
     );
 
-    // Animate popup
-    tl.fromTo(popup,
-      {
-        scale: startScale,
-        opacity: 0,
-        y: '100vh'
-      },
-      {
-        scale: endScale,
-        opacity: 1,
-        y: 0,
-        duration: 0.6,
-        ease: "power2.out"
-      },
-      "-=0.2" // Overlap with overlay animation
-    );
+    // Animate popup from start to end point
+    tl.to(popup, {
+      y: endPoint.y,
+      opacity: endPoint.opacity,
+      scale: endPoint.scale,
+      duration: 0.5
+    }, "-=0.1");
 
-    // Cleanup animation on unmount
-    return () => {
-      tl.kill();
-    };
+    return () => tl.kill();
   }, []);
 
   const handleClose = () => {
