@@ -36,14 +36,14 @@
 }
 
 .project-card:hover .project-image {
-  background: linear-gradient(90deg, #6e15db, #e63ad5);
   transform: scale(0.96);
   border-color: #BB86FC;
-  box-shadow: 0 0 20px rgba(157, 55, 197, 0.8);
+  box-shadow: 0 0 5px rgba(157, 55, 197, 0.8);
 }
 
 .project-card:hover .project-details {
-  color: #BB86FC;
+  color: #D946EF;
+  text-shadow: 0 0 12px rgba(20, 184, 166, 0.6);
 }
 
 .project-details {
@@ -100,16 +100,14 @@
     position: fixed;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%) scale(0);
-    width: 100%;
+    transform: translate(-50%, -50%);
+    width: 90%;
     max-width: 1000px;
-    height: 100vh;
-    display: grid;
-    grid-template-rows: auto 1fr auto;
-    padding: 30px 50px;
+    height: 90vh;
     z-index: 9999;
     background-color: #0F172A;
-    overflow: hidden; 
+    will-change: transform, opacity;
+    transform-origin: center center;
 }
 
 .nav {
@@ -185,8 +183,9 @@
   left: 0;
   width: 100vw;
   height: 100vh;
-  background-color: #0F172A;
-  z-index: 9996;
+  background-color: rgba(15, 23, 42, 0.9);
+  z-index: 9998;
+  will-change: opacity;
 }
   
 .project__img {

@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import gsap from "gsap";
 import { Link } from "react-router-dom";
 
@@ -6,6 +6,72 @@ export const ProjectPopup = ({ project, onClose }) => {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const [isFullscreen, setIsFullscreen] = useState(false);
   const images = project.images || [];
+
+  const popupRef = useRef(null);
+  const overlayRef = useRef(null);
+
+  useEffect(() => {
+    const popup = popupRef.current;
+    const overlay = overlayRef.current;
+
+    // Initial positions (start point)
+    const startScale = 0.3;
+    const endScale = 1;
+
+    // Create timeline for coordinated animation
+    const tl = gsap.timeline();
+
+    // Animate overlay
+    tl.fromTo(overlay, 
+      { opacity: 0 },
+      { opacity: 1, duration: 0.3 }
+    );
+
+    // Animate popup
+    tl.fromTo(popup,
+      {
+        scale: startScale,
+        opacity: 0,
+        y: '100vh'
+      },
+      {
+        scale: endScale,
+        opacity: 1,
+        y: 0,
+        duration: 0.6,
+        ease: "power2.out"
+      },
+      "-=0.2" // Overlap with overlay animation
+    );
+
+    // Cleanup animation on unmount
+    return () => {
+      tl.kill();
+    };
+  }, []);
+
+  const handleClose = () => {
+    const popup = popupRef.current;
+    const overlay = overlayRef.current;
+
+    // Animate out using two points (current -> end)
+    const tl = gsap.timeline({
+      onComplete: onClose
+    });
+
+    tl.to(popup, {
+      scale: 0.3,
+      opacity: 0,
+      y: '100vh',
+      duration: 0.4,
+      ease: "power2.in"
+    });
+
+    tl.to(overlay, {
+      opacity: 0,
+      duration: 0.3
+    }, "-=0.2");
+  };
 
   useEffect(() => {
     if (!project.video) {
@@ -24,14 +90,20 @@ export const ProjectPopup = ({ project, onClose }) => {
   }, [project.video]);
 
   const nextImage = (e) => {
-    e.stopPropagation();
+    if (e) {
+      e.preventDefault();
+      e.stopPropagation();
+    }
     setCurrentImageIndex((prevIndex) =>
       prevIndex === images.length - 1 ? 0 : prevIndex + 1
     );
   };
 
   const prevImage = (e) => {
-    e.stopPropagation();
+    if (e) {
+      e.preventDefault();
+      e.stopPropagation();
+    }
     setCurrentImageIndex((prevIndex) =>
       prevIndex === 0 ? images.length - 1 : prevIndex - 1
     );
@@ -92,11 +164,15 @@ export const ProjectPopup = ({ project, onClose }) => {
   };
 
   return (
-    <div className="container">
-      <div className="project-popup-overlay show" onClick={onClose}></div>
-      <div className="project-popup show">
+    <div className="container" onClick={(e) => e.stopPropagation()}>
+      <div className="project-popup-overlay" onClick={handleClose} ref={overlayRef}></div>
+      <div className="project-popup" ref={popupRef} onClick={(e) => e.stopPropagation()}>
         <div className="nav">
-          <Link href="/" className="back__link">
+          <Link 
+            to="/" 
+            className="back__link"
+            onClick={handleClose}
+          >
             Back to main page
           </Link>
         </div>
@@ -115,8 +191,11 @@ export const ProjectPopup = ({ project, onClose }) => {
               </video>
             </div>
           ) : (
-            <div className="carousel-container">
-              <button className="carousel-arrow left" onClick={prevImage}>
+            <div className="carousel-container" onClick={(e) => e.stopPropagation()}>
+              <button 
+                className="carousel-arrow left" 
+                onClick={prevImage}
+              >
                 <i className="fa-duotone fa-solid fa-arrow-left fa-sm"></i>
               </button>
               <img
@@ -124,9 +203,11 @@ export const ProjectPopup = ({ project, onClose }) => {
                 src={images[currentImageIndex]}
                 alt="project"
                 onClick={handleImageClick}
-                style={{ cursor: "pointer" }}
               />
-              <button className="carousel-arrow right" onClick={nextImage}>
+              <button 
+                className="carousel-arrow right" 
+                onClick={nextImage}
+              >
                 <i className="fa-duotone fa-solid fa-arrow-right fa-sm"></i>
               </button>
             </div>
