@@ -1,81 +1,10 @@
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useState } from "react";
 import gsap from "gsap";
 import { Link } from "react-router-dom";
 
 export const ProjectPopup = ({ project, onClose }) => {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const images = project.images || [];
-
-  const popupRef = useRef(null);
-  const overlayRef = useRef(null);
-
-  useEffect(() => {
-    const popup = popupRef.current;
-    const overlay = overlayRef.current;
-    
-    // Two points for animation
-    const startPoint = {
-      y: window.innerHeight,
-      opacity: 0,
-      scale: 0.8
-    };
-    
-    const endPoint = {
-      y: 0,
-      opacity: 1,
-      scale: 1
-    };
-
-    // Set initial position
-    gsap.set(popup, {
-      y: startPoint.y,
-      opacity: startPoint.opacity,
-      scale: startPoint.scale
-    });
-
-    const tl = gsap.timeline({
-      defaults: { ease: "power3.out" }
-    });
-
-    // Animate overlay
-    tl.fromTo(overlay, 
-      { opacity: 0 },
-      { opacity: 1, duration: 0.3 }
-    );
-
-    // Animate popup from start to end point
-    tl.to(popup, {
-      y: endPoint.y,
-      opacity: endPoint.opacity,
-      scale: endPoint.scale,
-      duration: 0.5
-    }, "-=0.1");
-
-    return () => tl.kill();
-  }, []);
-
-  const handleClose = () => {
-    const popup = popupRef.current;
-    const overlay = overlayRef.current;
-
-    // Animate out using two points (current -> end)
-    const tl = gsap.timeline({
-      onComplete: onClose
-    });
-
-    tl.to(popup, {
-      scale: 0.3,
-      opacity: 0,
-      y: '100vh',
-      duration: 0.4,
-      ease: "power2.in"
-    });
-
-    tl.to(overlay, {
-      opacity: 0,
-      duration: 0.3
-    }, "-=0.2");
-  };
 
   useEffect(() => {
     if (!project.video) {
@@ -126,10 +55,18 @@ export const ProjectPopup = ({ project, onClose }) => {
     }
   };
 
+  const handleClose = (e) => {
+    if (e) {
+      e.preventDefault();
+      e.stopPropagation();
+    }
+    onClose();
+  };
+
   return (
     <div className="container" onClick={(e) => e.stopPropagation()}>
-      <div className="project-popup-overlay" onClick={handleClose} ref={overlayRef}></div>
-      <div className="project-popup" ref={popupRef} onClick={(e) => e.stopPropagation()}>
+      <div className="project-popup-overlay" onClick={handleClose}></div>
+      <div className="project-popup" onClick={(e) => e.stopPropagation()}>
         <div className="nav">
           <Link 
             to="/" 
