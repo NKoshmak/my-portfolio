@@ -20,7 +20,6 @@ const NeonTrail = () => {
       return colors[Math.floor(Math.random() * colors.length)];
     };
 
-    // Modified to draw continuous line
     const drawTrail = () => {
       ctx.clearRect(0, 0, canvas.width, canvas.height);
 
@@ -28,39 +27,28 @@ const NeonTrail = () => {
         ctx.beginPath();
         ctx.moveTo(trail.current[0].x, trail.current[0].y);
 
-        // Draw curved line through points
-        for (let i = 1; i < trail.current.length - 2; i++) {
-          const xc = (trail.current[i].x + trail.current[i + 1].x) / 2;
-          const yc = (trail.current[i].y + trail.current[i + 1].y) / 2;
-          ctx.quadraticCurveTo(trail.current[i].x, trail.current[i].y, xc, yc);
-        }
-
-        // Draw last segment
-        if (trail.current.length > 2) {
-          const last = trail.current.length - 1;
-          ctx.quadraticCurveTo(
-            trail.current[last - 1].x,
-            trail.current[last - 1].y,
-            trail.current[last].x,
-            trail.current[last].y
-          );
+        for (let i = 0; i < trail.current.length - 1; i++) {
+          const point1 = trail.current[i];     
+          const point2 = trail.current[i + 1]; 
+          
+          const xc = (point1.x + point2.x) / 2;
+          const yc = (point1.y + point2.y) / 2;
+          ctx.quadraticCurveTo(point1.x, point1.y, xc, yc);
         }
 
         ctx.lineWidth = 2;
         ctx.lineCap = 'round';
         ctx.strokeStyle = trail.current[0].color;
-        ctx.shadowBlur = 10;
+        ctx.shadowBlur = 8;
         ctx.shadowColor = trail.current[0].color;
         ctx.stroke();
       }
 
-      // Increase fade speed
       for (let i = 0; i < trail.current.length; i++) {
-        trail.current[i].opacity -= 0.02; // Increased from 0.02
+        trail.current[i].opacity -= 0.1; 
       }
 
       trail.current = trail.current.filter((p) => p.opacity > 0);
-
       requestAnimationFrame(drawTrail);
     };
 
@@ -70,10 +58,8 @@ const NeonTrail = () => {
 
       if (x && y) {
         trail.current.push({ x, y, opacity: 1, color: getRandomColor() });
-
-        // Reduce trail length for quicker response
-        if (trail.current.length > 20) { 
-          trail.current.shift();
+        
+        if (trail.current.length > 10) {
         }
       }
     };
