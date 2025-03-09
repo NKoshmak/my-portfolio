@@ -56,7 +56,7 @@ const NeonTrail = () => {
 
       // Increase fade speed
       for (let i = 0; i < trail.current.length; i++) {
-        trail.current[i].opacity -= 0.05; // Increased from 0.02
+        trail.current[i].opacity -= 0.02; // Increased from 0.02
       }
 
       trail.current = trail.current.filter((p) => p.opacity > 0);
@@ -72,7 +72,7 @@ const NeonTrail = () => {
         trail.current.push({ x, y, opacity: 1, color: getRandomColor() });
 
         // Reduce trail length for quicker response
-        if (trail.current.length > 25) { // Reduced from 50
+        if (trail.current.length > 20) { 
           trail.current.shift();
         }
       }
