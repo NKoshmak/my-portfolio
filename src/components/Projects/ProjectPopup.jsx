@@ -4,7 +4,6 @@ import { Link } from "react-router-dom";
 
 export const ProjectPopup = ({ project, onClose }) => {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
-  const [isFullscreen, setIsFullscreen] = useState(false);
   const images = project.images || [];
 
   const popupRef = useRef(null);
@@ -111,55 +110,14 @@ export const ProjectPopup = ({ project, onClose }) => {
 
   const handleImageClick = (e) => {
     e.stopPropagation();
+    const rect = e.currentTarget.getBoundingClientRect();
+    const clickX = e.clientX - rect.left;
 
-    if (window.innerWidth <= 768) {
-      setIsFullscreen(true);
-    } else {
-      const rect = e.currentTarget.getBoundingClientRect();
-      const clickX = e.clientX - rect.left;
-
-      if (clickX < rect.width / 2) {
-        prevImage(e); 
-      } else {
-        nextImage(e); 
-      }
-    }
-  };
-
-  const closeFullscreen = (e) => {
-    e.stopPropagation();
-    setIsFullscreen(false);
-  };
-
-  // Handle touch gestures for mobile swiping
-  let touchStartX = 0;
-  let touchEndX = 0;
-
-  const handleTouchStart = (e) => {
-    touchStartX = e.touches[0].clientX;
-  };
-
-  const handleTouchMove = (e) => {
-    touchEndX = e.touches[0].clientX;
-  };
-
-
-  const handleTouchEnd = (e) => {
-    const touchX = touchStartX;
-    const swipeDistance = touchStartX - touchEndX;
-  
-    if (swipeDistance > 50) {
-      nextImage(e);
-    } else if (swipeDistance < -50) {
+    // Two-pointer approach for image navigation
+    if (clickX < rect.width / 2) {
       prevImage(e); 
     } else {
-      const screenWidth = window.innerWidth;
-  
-      if (touchX < screenWidth / 2) {
-        prevImage(e); 
-      } else {
-        nextImage(e); 
-      }
+      nextImage(e); 
     }
   };
 
@@ -256,26 +214,6 @@ export const ProjectPopup = ({ project, onClose }) => {
           </a>
         </div>
       </div>
-
-      {/* Fullscreen Image Overlay */}
-      {isFullscreen && (
-        <div
-          className="fullscreen-overlay"
-          onClick={closeFullscreen}
-          onTouchStart={handleTouchStart}
-          onTouchMove={handleTouchMove}
-          onTouchEnd={handleTouchEnd}
-        >
-          <img
-            src={images[currentImageIndex]}
-            alt="Fullscreen project"
-            className="fullscreen-img"
-          />
-          <button className="close-fullscreen" onClick={closeFullscreen}>
-            <i className="fa-solid fa-circle-xmark fa-sm"></i>
-          </button>
-        </div>
-      )}
     </div>
   );
 };
