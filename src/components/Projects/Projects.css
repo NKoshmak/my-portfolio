@@ -54,7 +54,7 @@
 
 .project-name,
 .project-year {
-  font-size: 0.6rem;
+  font-size: 0.7rem;
   font-weight: lighter;
 }
 
@@ -156,7 +156,7 @@
 
 .back__link:hover {
   color: #BB86FC;;
-  transform: scale(1.1);
+  transform: scale(1.2);
   transition: transform 0.5s ease;
 }
   
@@ -307,6 +307,10 @@
 
 .footer__link {
   order: 2;
+}
+.footer__link:hover {
+  transform: scale(1.2);
+  transition: transform 0.5s ease;
 }
 
 

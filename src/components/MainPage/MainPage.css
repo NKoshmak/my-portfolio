@@ -75,14 +75,8 @@
 
  .get_in_touch {
   margin-top: 20px;
-  transition: all 0.3s ease;
   margin-bottom: 10px;
- 
- }
-
- .get_in_touch:hover {
-  background-color: rgba(162, 100, 191, 0.3);
-  transform: scale(1.05);
+  transition: all 0.3s ease;
  }
 
  .top__icons {
