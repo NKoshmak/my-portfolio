@@ -1,3 +1,5 @@
+/** @format */
+
 import React, { useEffect, useRef, useState } from "react";
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 import { dracula } from "react-syntax-highlighter/dist/esm/styles/prism";
@@ -39,7 +41,11 @@ const CodeSnippet = () => {
     >
       <SyntaxHighlighter
         language="javascript"
-        style={{ ...dracula, background: "none", backgroundColor: "transparent" }}
+        style={{
+          ...dracula,
+          background: "none",
+          backgroundColor: "transparent",
+        }}
         customStyle={{
           background: "none",
           backgroundColor: "transparent",
@@ -49,7 +55,6 @@ const CodeSnippet = () => {
           overflowX: "auto",
           fontSize: fontSize,
           marginTop: "20px",
-           // Apply font size here too
         }}
         wrapLongLines={true}
       >
@@ -62,11 +67,11 @@ const CodeSnippet = () => {
       </h1>
 
       <p>
-          I’m a Frontend Developer who loves
+          I’m a Frontend Developer & Designer who loves
         building interactive and dynamic web 
         applications,turning ideas into engaging
         digital experiences.
-          Skilled in JS, React, Next.js and other 
+          Skilled in JS, React, HTML/CSS and other 
         modern technologies.
 
         <strong> 
@@ -80,6 +85,7 @@ const CodeSnippet = () => {
   `}
       </SyntaxHighlighter>
     </div>
+    
   );
 };
 

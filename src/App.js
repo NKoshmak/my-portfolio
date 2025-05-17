@@ -16,8 +16,6 @@ function App() {
 
   //loader
   useEffect(() => {
-    // let customEase =
-    //   "M0,0,C0,0,0.13,0.34,0.238,0.442,0.305,0.506,0.322,0.514,0.396,0.54,0.478,0.568,0.468,0.56,0.522,0.584,0.572,0.606,0.61,0.719,0.714,0.826,0.798,0.912,1,1,1,1";
     let counter = { value: 40 };
     let loaderDuration = sessionStorage.getItem("visited") !== null ? 2 : 4;
 
@@ -34,7 +32,7 @@ function App() {
     function endLoaderAnimation() {
       setLoading(false);
       if (lenisRef.current) {
-        lenisRef.current.start(); // Corrected: Start Lenis after loading
+        lenisRef.current.start();
       }
       gsap.set(".home-hero_content", { autoAlpha: 1 });
     }
@@ -146,6 +144,7 @@ function App() {
             </div>
           </div>
         </section>
+
 
         <section className="panel">
           <div className="panel-content">
