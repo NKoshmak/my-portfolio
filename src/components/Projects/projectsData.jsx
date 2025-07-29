@@ -1,8 +1,8 @@
-import kImage1 from '../../assets/images/kickstarter/k1.jpg';
-import kImage2 from '../../assets/images/kickstarter/k2.jpg';
-import kImage3 from '../../assets/images/kickstarter/k3.jpg';
-import kImage4 from '../../assets/images/kickstarter/k4.jpg';
-import kImage5 from '../../assets/images/kickstarter/k5.jpg';
+// import kImage1 from '../../assets/images/kickstarter/k1.jpg';
+// import kImage2 from '../../assets/images/kickstarter/k2.jpg';
+// import kImage3 from '../../assets/images/kickstarter/k3.jpg';
+// import kImage4 from '../../assets/images/kickstarter/k4.jpg';
+// import kImage5 from '../../assets/images/kickstarter/k5.jpg';
 
 import airImage1 from '../../assets/images/air/air1.jpg';
 import airImage2 from '../../assets/images/air/air2.jpg';
@@ -51,28 +51,28 @@ export const projects = [
     liveLink: "https://nkoshmak.github.io/air-landing/",
     codeLink: "https://github.com/NKoshmak/air-landing",
   },
-  { 
-    image1: kImage1,
-    name: "Kickstarter",
-    year: "2024",
-    images: [
-      kImage1,
-      kImage2,
-      kImage3,
-      kImage4,
-      kImage5,    
-    ],
-    video: null,
-    techsteck: 'JavaScript, HTML/CSS, SASS, BEM',
-    description: 'This is a responsive landing page designed and developed to meet the requirements, including key features such as smooth scroll, hover effects, and interactive elements.',
-    liveLink: "https://kickstarter-landing.vercel.app",
-    codeLink: "https://github.com/NKoshmak/kickstarter_landing",
-  },
+  // { 
+  //   image1: kImage1,
+  //   name: "Kickstarter",
+  //   year: "2024",
+  //   images: [
+  //     kImage1,
+  //     kImage2,
+  //     kImage3,
+  //     kImage4,
+  //     kImage5,    
+  //   ],
+  //   video: null,
+  //   techsteck: 'JavaScript, HTML/CSS, SASS, BEM',
+  //   description: 'This is a responsive landing page designed and developed to meet the requirements, including key features such as smooth scroll, hover effects, and interactive elements.',
+  //   liveLink: "https://kickstarter-landing.vercel.app",
+  //   codeLink: "https://github.com/NKoshmak/kickstarter_landing",
+  // },
   {
     image1: boImage1,
     name: "B&O",
     year: "2024",
-    isLarge: true,
+    // isLarge: true,
     images: [
       boImage1,
       boImage2,

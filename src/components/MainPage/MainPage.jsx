@@ -18,6 +18,7 @@ export default function MainPage() {
               <li>Javascript</li>
               <li>React</li>
               <li>Typescript</li>
+               <li>Figma</li>
             </ul>
 
             <div className="get_in_touch">
@@ -30,12 +31,12 @@ export default function MainPage() {
             </div>
 
             <a
-              href="https://pastelpixelsstudio.com"
+              href="https://nataliakoshmakdesign.netlify.app"
               target="_blank"
               rel="noopener noreferrer"
               style={{ color: "#80cbc4", textDecoration: "underline", cursor:"pointer", fontSize:"1rem", zIndex: 10, position: 'relative' }}
             >
-              My UI/UX Work →
+              UI/UX Work →
             </a>
           </div>
 

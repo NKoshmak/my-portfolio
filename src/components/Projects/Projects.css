@@ -1,9 +1,9 @@
 .projects__list {
   display: grid;
   grid-template-columns: 1fr; 
-  column-gap: 30px;
-  row-gap: 100px;
-  padding: 50px; 
+  column-gap: 40px;
+  row-gap: 200px;
+  padding: 40px; 
 }
 
 @media (min-width: 1020px) {
