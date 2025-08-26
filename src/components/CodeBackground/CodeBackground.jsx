@@ -54,7 +54,7 @@ const CodeSnippet = () => {
           wordBreak: "break-word",
           overflowX: "auto",
           fontSize: fontSize,
-          marginTop: "20px",
+          marginTop: "50px",
         }}
         wrapLongLines={true}
       >
