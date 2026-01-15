@@ -1,8 +1,8 @@
-// import kImage1 from '../../assets/images/kickstarter/k1.jpg';
-// import kImage2 from '../../assets/images/kickstarter/k2.jpg';
-// import kImage3 from '../../assets/images/kickstarter/k3.jpg';
-// import kImage4 from '../../assets/images/kickstarter/k4.jpg';
-// import kImage5 from '../../assets/images/kickstarter/k5.jpg';
+import astronexImage1 from '../../assets/images/AstroNex/1a.png';
+import astronexImage2 from '../../assets/images/AstroNex/2a.png';
+import astronexImage3 from '../../assets/images/AstroNex/3.png';
+import astronexImage4 from '../../assets/images/AstroNex/4.png';
+import astronexImage5 from '../../assets/images/AstroNex/5b.png';
 
 import airImage1 from '../../assets/images/air/air1.jpg';
 import airImage2 from '../../assets/images/air/air2.jpg';
@@ -14,17 +14,36 @@ import airImage6 from '../../assets/images/air/air6.jpg';
 import gameImage from '../../assets/images/2048/game1.jpg';
 
 import todoImage from '../../assets/images/todo/todo1.jpg';
-import boImage1 from '../../assets/images/bo/bo1.jpg';
-import boImage2 from '../../assets/images/bo/bo2.jpg';
-import boImage3 from '../../assets/images/bo/bo3.jpg';
-import boImage4 from '../../assets/images/bo/bo4.jpg';
+// import boImage1 from '../../assets/images/bo/bo1.jpg';
+// import boImage2 from '../../assets/images/bo/bo2.jpg';
+// import boImage3 from '../../assets/images/bo/bo3.jpg';
+// import boImage4 from '../../assets/images/bo/bo4.jpg';
 
 export const projects = [
+    { 
+    image1: astronexImage1,
+    name: "AstroNex",
+    year: "2025",
+    isLarge: true,
+    images: [
+      astronexImage1,
+      astronexImage2,
+      astronexImage3,
+      astronexImage4,
+      astronexImage5,
+         
+    ],
+    video: null,
+    techsteck: 'JavaScript, HTML/CSS',
+    description: 'Astrology-themed marketing website with a strong emphasis on visual hierarchy, responsive layout, and detailed UI implementation. Built using clean HTML, CSS, and JavaScript with custom interactive elements and subtle animations to enhance user experience.',
+    liveLink: "https://effortless-horse-20a7f2.netlify.app",
+    codeLink: null,
+  },
   { 
     image1: todoImage,
     name: "Task Management App with API",
     year: "2024",
-    isLarge: true,
+    
     images: [],
     video: require('../../assets/images/todo/todo.mov'),
     techsteck: 'Typescript, HTML5/CSS, SASS, React',
@@ -35,7 +54,7 @@ export const projects = [
   {
     image1: airImage1,
     name: "Air",
-    year: "2025",
+    year: "2023",
     images: [
       airImage1,
       airImage2,
@@ -51,45 +70,29 @@ export const projects = [
     liveLink: "https://nkoshmak.github.io/air-landing/",
     codeLink: "https://github.com/NKoshmak/air-landing",
   },
-  // { 
-  //   image1: kImage1,
-  //   name: "Kickstarter",
+
+  // {
+  //   image1: boImage1,
+  //   name: "B&O",
   //   year: "2024",
+  //   isLarge: true,
   //   images: [
-  //     kImage1,
-  //     kImage2,
-  //     kImage3,
-  //     kImage4,
-  //     kImage5,    
+  //     boImage1,
+  //     boImage2,
+  //     boImage3,
+  //     boImage4,     
   //   ],
   //   video: null,
-  //   techsteck: 'JavaScript, HTML/CSS, SASS, BEM',
-  //   description: 'This is a responsive landing page designed and developed to meet the requirements, including key features such as smooth scroll, hover effects, and interactive elements.',
-  //   liveLink: "https://kickstarter-landing.vercel.app",
-  //   codeLink: "https://github.com/NKoshmak/kickstarter_landing",
+  //   techsteck: 'JavaScript, HTML5, CSS/SASS, BEM',
+  //   description: 'A responsive landing page for B&O, showcasing modern design principles and user-friendly functionality. Includes email form validation, interactive hover and focus states, clickable phone numbers, and address links to Google Maps. Designed with mobile-first and cross-browser compatibility in mind.',
+  //   liveLink: "https://nkoshmak.github.io/BO-landing-page/",
+  //   codeLink: "https://github.com/NKoshmak/BO-landing-page",
   // },
-  {
-    image1: boImage1,
-    name: "B&O",
-    year: "2024",
-    // isLarge: true,
-    images: [
-      boImage1,
-      boImage2,
-      boImage3,
-      boImage4,     
-    ],
-    video: null,
-    techsteck: 'JavaScript, HTML5, CSS/SASS, BEM',
-    description: 'A responsive landing page for B&O, showcasing modern design principles and user-friendly functionality. Includes email form validation, interactive hover and focus states, clickable phone numbers, and address links to Google Maps. Designed with mobile-first and cross-browser compatibility in mind.',
-    liveLink: "https://nkoshmak.github.io/BO-landing-page/",
-    codeLink: "https://github.com/NKoshmak/BO-landing-page",
-  },
 
   {
     image1: gameImage,
     name: "Game 2048",
-    year: "2025",
+    year: "2022",
     isLarge: true,
     images: [],
     video: require('../../assets/images/2048/record2048.mov'),

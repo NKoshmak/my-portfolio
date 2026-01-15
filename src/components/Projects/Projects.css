@@ -27,7 +27,6 @@
   cursor: pointer;
 }
 
-
 .project-image {
   width: 100%;
   height: auto;
@@ -36,13 +35,11 @@
 }
 
 .project-card:hover .project-image {
-  transform: scale(0.96);
-  border-color: #BB86FC;
-  box-shadow: 0 0 5px rgba(157, 55, 197, 0.8);
+  transform: scale(0.97);
 }
 
 .project-card:hover .project-details {
-  color: #D946EF;
+  color: #BB86FC;
   text-shadow: 0 0 12px rgba(20, 184, 166, 0.6);
 }
 
@@ -54,7 +51,7 @@
 
 .project-name,
 .project-year {
-  font-size: 0.7rem;
+  font-size: 0.8rem;
   font-weight: lighter;
 }
 

@@ -7,12 +7,12 @@ import { dracula } from "react-syntax-highlighter/dist/esm/styles/prism";
 const CodeSnippet = () => {
   const codeRef = useRef(null);
   const [topPosition, setTopPosition] = useState(100);
-  const [fontSize, setFontSize] = useState("0.7rem"); // Default for desktop
+  const [fontSize, setFontSize] = useState("0.65rem"); // Default for desktop
 
   useEffect(() => {
     const handleResize = () => {
       setTopPosition(window.innerWidth <= 768 ? 200 : 180);
-      setFontSize(window.innerWidth <= 768 ? "0.4rem" : "0.7rem"); // Adjust font size
+      setFontSize(window.innerWidth <= 768 ? "0.35rem" : "0.65rem"); // Adjust font size
     };
 
     handleResize();
@@ -67,11 +67,11 @@ const CodeSnippet = () => {
       </h1>
 
       <p>
-          I’m a Frontend Developer & Designer who loves
-        building interactive and dynamic web 
-        applications,turning ideas into engaging
+          I’m a Frontend Developer with a strong eye for design,
+        who enjoys building interactive and dynamic web 
+        applications and turning ideas into engaging
         digital experiences.
-          Skilled in JS, React, HTML/CSS and other 
+          Skilled in JS, React, HTML/CSS, Framer and other 
         modern technologies.
 
         <strong> 

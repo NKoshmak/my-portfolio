@@ -49,9 +49,9 @@ export const ProjectPopup = ({ project, onClose }) => {
 
     // Two-pointer approach for image navigation
     if (clickX < rect.width / 2) {
-      prevImage(e); 
+      prevImage(e);
     } else {
-      nextImage(e); 
+      nextImage(e);
     }
   };
 
@@ -68,11 +68,7 @@ export const ProjectPopup = ({ project, onClose }) => {
       <div className="project-popup-overlay" onClick={handleClose}></div>
       <div className="project-popup" onClick={(e) => e.stopPropagation()}>
         <div className="nav">
-          <Link 
-            to="/" 
-            className="back__link"
-            onClick={handleClose}
-          >
+          <Link to="/" className="back__link" onClick={handleClose}>
             Back to main page
           </Link>
         </div>
@@ -91,23 +87,23 @@ export const ProjectPopup = ({ project, onClose }) => {
               </video>
             </div>
           ) : (
-            <div className="carousel-container" onClick={(e) => e.stopPropagation()}>
-              <button 
-                className="carousel-arrow left" 
-                onClick={prevImage}
-              >
+            <div
+              className="carousel-container"
+              onClick={(e) => e.stopPropagation()}
+            >
+              <button className="carousel-arrow left" onClick={prevImage}>
                 <i className="fa-duotone fa-solid fa-arrow-left fa-sm"></i>
               </button>
-              <img
+              
+                <img
                 className="project__img"
                 src={images[currentImageIndex]}
                 alt="project"
                 onClick={handleImageClick}
               />
-              <button 
-                className="carousel-arrow right" 
-                onClick={nextImage}
-              >
+           
+              
+              <button className="carousel-arrow right" onClick={nextImage}>
                 <i className="fa-duotone fa-solid fa-arrow-right fa-sm"></i>
               </button>
             </div>
@@ -125,22 +121,27 @@ export const ProjectPopup = ({ project, onClose }) => {
             </ul>
 
             <div className="project-popup-buttons">
-              <a
-                href={project.liveLink}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="popup-button"
-              >
-                Live View
-              </a>
-              <a
-                href={project.codeLink}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="popup-button"
-              >
-                Code View
-              </a>
+              {project.liveLink && (
+                <a
+                  href={project.liveLink}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="popup-button"
+                >
+                  Live View
+                </a>
+              )}
+
+              {project.codeLink && (
+                <a
+                  href={project.codeLink}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="popup-button"
+                >
+                  Code View
+                </a>
+              )}
             </div>
           </div>
         </div>

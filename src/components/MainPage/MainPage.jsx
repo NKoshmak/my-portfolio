@@ -15,10 +15,11 @@ export default function MainPage() {
             <h2 className="development__title"> Skills</h2>
             <ul className="development__list">
               <li>HTML / CSS</li>
-              <li>Javascript</li>
+              <li>JavaScript</li>
               <li>React</li>
-              <li>Typescript</li>
-               <li>Figma</li>
+              {/* <li>Typescript</li> */}
+              <li>Figma</li>
+               <li>Framer</li>
             </ul>
 
             <div className="get_in_touch">
