@@ -36,7 +36,7 @@ export const projects = [
     video: null,
     techsteck: 'JavaScript, HTML/CSS',
     description: 'Astrology-themed marketing website with a strong emphasis on visual hierarchy, responsive layout, and detailed UI implementation. Built using clean HTML, CSS, and JavaScript with custom interactive elements and subtle animations to enhance user experience.',
-    liveLink: "https://effortless-horse-20a7f2.netlify.app",
+    liveLink: "https://astro-nex.netlify.app",
     codeLink: null,
   },
   { 
