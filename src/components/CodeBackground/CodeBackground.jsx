@@ -54,7 +54,7 @@ const CodeSnippet = () => {
           wordBreak: "break-word",
           overflowX: "auto",
           fontSize: fontSize,
-          marginTop: "50px",
+          marginTop: "10px",
         }}
         wrapLongLines={true}
       >
@@ -67,7 +67,7 @@ const CodeSnippet = () => {
       </h1>
 
       <p>
-          I’m a Frontend Developer with a strong eye for design,
+          I’m a Front-End / UI Developer with a strong eye for design,
         who enjoys building interactive and dynamic web 
         applications and turning ideas into engaging
         digital experiences.

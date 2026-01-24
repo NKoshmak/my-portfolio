@@ -1,9 +1,12 @@
+/** @format */
+
 import { useEffect, useState } from "react";
 import gsap from "gsap";
 import { Link } from "react-router-dom";
 
 export const ProjectPopup = ({ project, onClose }) => {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
+  const [isFullscreen, setIsFullscreen] = useState(false);
   const images = project.images || [];
 
   useEffect(() => {
@@ -11,14 +14,14 @@ export const ProjectPopup = ({ project, onClose }) => {
       gsap.fromTo(
         ".carousel-container img",
         { opacity: 0 },
-        { opacity: 1, scale: 1, duration: 3 }
+        { opacity: 1, scale: 1, duration: 3 },
       );
     }
 
     gsap.fromTo(
       ".project__details",
       { opacity: 0, yPercent: 100 },
-      { opacity: 1, yPercent: 0, duration: 1.6 }
+      { opacity: 1, yPercent: 0, duration: 1.6 },
     );
   }, [project.video]);
 
@@ -28,7 +31,7 @@ export const ProjectPopup = ({ project, onClose }) => {
       e.stopPropagation();
     }
     setCurrentImageIndex((prevIndex) =>
-      prevIndex === images.length - 1 ? 0 : prevIndex + 1
+      prevIndex === images.length - 1 ? 0 : prevIndex + 1,
     );
   };
 
@@ -38,7 +41,7 @@ export const ProjectPopup = ({ project, onClose }) => {
       e.stopPropagation();
     }
     setCurrentImageIndex((prevIndex) =>
-      prevIndex === 0 ? images.length - 1 : prevIndex - 1
+      prevIndex === 0 ? images.length - 1 : prevIndex - 1,
     );
   };
 
@@ -61,6 +64,32 @@ export const ProjectPopup = ({ project, onClose }) => {
       e.stopPropagation();
     }
     onClose();
+  };
+
+  const openFullscreen = (e) => {
+    e.stopPropagation();
+    setIsFullscreen(true);
+  };
+
+  const closeFullscreen = () => {
+    setIsFullscreen(false);
+  };
+
+  let touchStartX = 0;
+
+  const handleTouchStart = (e) => {
+    touchStartX = e.touches[0].clientX;
+  };
+
+  const handleTouchEnd = (e) => {
+    const touchEndX = e.changedTouches[0].clientX;
+    const diff = touchStartX - touchEndX;
+
+    if (diff > 50) {
+      nextImage();
+    } else if (diff < -50) {
+      prevImage();
+    }
   };
 
   return (
@@ -94,15 +123,20 @@ export const ProjectPopup = ({ project, onClose }) => {
               <button className="carousel-arrow left" onClick={prevImage}>
                 <i className="fa-duotone fa-solid fa-arrow-left fa-sm"></i>
               </button>
-              
-                <img
+
+              <img
                 className="project__img"
                 src={images[currentImageIndex]}
                 alt="project"
-                onClick={handleImageClick}
+                onClick={(e) => {
+                  if (window.innerWidth < 768) {
+                    openFullscreen(e);
+                  } else {
+                    handleImageClick(e);
+                  }
+                }}
               />
-           
-              
+
               <button className="carousel-arrow right" onClick={nextImage}>
                 <i className="fa-duotone fa-solid fa-arrow-right fa-sm"></i>
               </button>
@@ -157,6 +191,23 @@ export const ProjectPopup = ({ project, onClose }) => {
           </a>
         </div>
       </div>
+
+      {isFullscreen && (
+        <div className="fullscreen-overlay" onClick={closeFullscreen}>
+          <button className="close-fullscreen" onClick={closeFullscreen}>
+            ✕
+          </button>
+
+          <img
+            src={images[currentImageIndex]}
+            className="fullscreen-img"
+            onClick={(e) => e.stopPropagation()}
+            onTouchStart={handleTouchStart}
+            onTouchEnd={handleTouchEnd}
+            alt="fullscreen"
+          />
+        </div>
+      )}
     </div>
   );
 };

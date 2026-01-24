@@ -58,7 +58,8 @@
   color: inherit;
   cursor: pointer;
   color:#5EEAD4;
-  font-size: 1rem;
+  /* font-size: 1rem; */
+  margin: 0;
   
  }
 
@@ -79,12 +80,12 @@
   transition: all 0.3s ease;
  }
 
- .top__icons {
-  margin-top: 10px;
+.top__icons {
   display: flex;
   flex-direction: column;
   gap: 20px;
- }
+  margin-top: 15px;
+}
 
  .fa-linkedin-in,
  .fa-github {
@@ -99,20 +100,23 @@
   transition: transform 0.5s ease;
  }
 
- @media (min-width: 780px) {
+@media (min-width: 780px) {
   .text__content {
-    flex-direction: row;
-     justify-content: space-between;
-     align-items: flex-start;
-     width: 100%;
-     height: 100vh;
-     font-size: 0.7rem;
+    display: grid;
+    grid-template-columns: 1fr auto;
+    width: 100%;
+    height: 100vh;
+    font-size: 0.7rem;
   }
 
-  .icons {
-    gap: 20px;
+  .right__column {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;   /* 🔥 все притискається вправо */
+    justify-content: space-between;
+    height: 100%;
   }
- }
+}
 
  @media (min-width: 1700px) {
  .text__content {

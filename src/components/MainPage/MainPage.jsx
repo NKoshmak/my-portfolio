@@ -12,15 +12,28 @@ export default function MainPage() {
       <div className="main-page" id="main">
         <div className="text__content">
           <div className="development">
-            <h2 className="development__title"> Skills</h2>
+            <h2 className="development__title">Skills</h2>
             <ul className="development__list">
               <li>HTML / CSS</li>
               <li>JavaScript</li>
               <li>React</li>
-              {/* <li>Typescript</li> */}
               <li>Figma</li>
-               <li>Framer</li>
+              <li>Framer</li>
             </ul>
+          </div>
+
+          <div className="right__column">
+            <div className="top__icons">
+              <a
+                href="https://www.linkedin.com/in/nataliia-k-8457b530a/"
+                target="blank"
+              >
+                <i className="fa-brands fa-linkedin-in fa-2xl"></i>
+              </a>
+              <a href="https://github.com/NKoshmak" target="blank">
+                <i className="fa-brands fa-github fa-2xl"></i>
+              </a>
+            </div>
 
             <div className="get_in_touch">
               <a
@@ -30,31 +43,8 @@ export default function MainPage() {
                 Get in touch
               </a>
             </div>
-
-            <a
-              href="https://nataliakoshmakdesign.netlify.app"
-              target="_blank"
-              rel="noopener noreferrer"
-              style={{ color: "#80cbc4", textDecoration: "underline", cursor:"pointer", fontSize:"1rem", zIndex: 10, position: 'relative' }}
-            >
-              UI/UX Work →
-            </a>
-          </div>
-
-          <div className="top__icons">
-            <a
-              href="https://www.linkedin.com/in/nataliia-k-8457b530a/"
-              target="blank"
-            >
-              <i class="fa-brands fa-linkedin-in fa-2xl"></i>
-            </a>
-
-            <a href="https://github.com/NKoshmak" target="blank">
-              <i class="fa-brands fa-github fa-2xl"></i>
-            </a>
           </div>
         </div>
-
         <div>
           <CodeEditor />
         </div>

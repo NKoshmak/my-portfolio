@@ -1,12 +1,13 @@
+/** @format */
 
-import gsap from 'gsap';
-import { ScrollTrigger, ScrollToPlugin } from 'gsap/all';
-import Lenis from '@studio-freight/lenis';
-import { useEffect, useRef, useState } from 'react';
-import './App.css';
-import MainPage from './components/MainPage/MainPage.jsx';
-import Projects from './components/Projects/Projects.jsx';
-import NeonCanvas from './components/NeonCursor/NeonCanva.jsx';
+import gsap from "gsap";
+import { ScrollTrigger, ScrollToPlugin } from "gsap/all";
+import Lenis from "@studio-freight/lenis";
+import { useEffect, useRef, useState } from "react";
+import "./App.css";
+import MainPage from "./components/MainPage/MainPage.jsx";
+import Projects from "./components/Projects/Projects.jsx";
+import NeonCanvas from "./components/NeonCursor/NeonCanva.jsx";
 
 gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
 
@@ -60,69 +61,81 @@ function App() {
         duration: loaderDuration,
         ease: "linear",
       },
-      0
+      0,
     );
   }, []);
 
   //pages
   useEffect(() => {
-  let panels = gsap.utils.toArray(".panel");
-  panels.pop();
+    let panels = gsap.utils.toArray(".panel");
+    panels.pop();
 
-  panels.forEach((panel, i) => {
-    let tl = gsap.timeline({
-      scrollTrigger:{
-      trigger: panel,
-      start: "bottom bottom",
-      pinSpacing: false,
-      pin: true,
-      scrub: true,
-      onRefresh: () => gsap.set(panel, {transformOrigin: "center " + (panel.offsetHeight - window.innerHeight / 2) + "px"})
-    }
-  });
-  
-    tl.fromTo(panel, {y:0, rotate:0, scale:1, opacity:1}, {y:0, rotateX:0, scale:0.5, opacity:0.5}, 0)
-    .to(panel, {opacity:0})
-    
-  });
-}, []);
+    panels.forEach((panel, i) => {
+      let tl = gsap.timeline({
+        scrollTrigger: {
+          trigger: panel,
+          start: "bottom bottom",
+          pinSpacing: false,
+          pin: true,
+          scrub: true,
+          onRefresh: () =>
+            gsap.set(panel, {
+              transformOrigin:
+                "center " +
+                (panel.offsetHeight - window.innerHeight / 2) +
+                "px",
+            }),
+        },
+      });
+
+      tl.fromTo(
+        panel,
+        { y: 0, rotate: 0, scale: 1, opacity: 1 },
+        { y: 0, rotateX: 0, scale: 0.5, opacity: 0.5 },
+        0,
+      ).to(panel, { opacity: 0 });
+    });
+  }, []);
 
   //scroll
   useEffect(() => {
     // Check if the device is mobile
     const isMobile = window.innerWidth <= 768;
-  
+
     if (!isMobile) {
       lenisRef.current = new Lenis({
         smooth: true,
+        smoothTouch: false,
+        syncTouch: true,
         infinite: true,
-        duration: 1,
-        easing: (t) => 1 - Math.pow(1 - t, 4),
-        wrapper: document.body
+        duration: 1.2,
+        easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+        gestureDirection: "both",
+        wrapper: document.body,
       });
-  
+
       const lenis = lenisRef.current;
-    
-      lenis.on('scroll', ScrollTrigger.update);
+
+      lenis.on("scroll", ScrollTrigger.update);
       gsap.ticker.lagSmoothing(0);
-    
+
       function raf(time) {
-          lenis.raf(time);
-          requestAnimationFrame(raf);
+        lenis.raf(time);
+        requestAnimationFrame(raf);
       }
-    
+
       requestAnimationFrame(raf);
-  
+
       return () => {
         lenis.destroy(); // Cleanup Lenis instance
-        ScrollTrigger.getAll().forEach(trigger => trigger.kill()); // Cleanup ScrollTriggers
+        ScrollTrigger.getAll().forEach((trigger) => trigger.kill()); // Cleanup ScrollTriggers
       };
     }
   }, []);
 
   return (
     <>
-    <NeonCanvas />
+      <NeonCanvas />
       {loading && (
         <div className="loader">
           <div className="loader_progress"></div>
@@ -144,7 +157,6 @@ function App() {
             </div>
           </div>
         </section>
-
 
         <section className="panel">
           <div className="panel-content">
