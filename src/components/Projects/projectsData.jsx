@@ -21,8 +21,8 @@ import mybikeImage3 from "../../assets/images/myBike/3.webp";
 import mybikeImage4 from "../../assets/images/myBike/4.webp";
 import mybikeImageMain from "../../assets/images/myBike/main.webp";
 
-import pastelMain from "../../assets/images/pastelpixels/main.webp";
-import pastelImage1 from "../../assets/images/pastelpixels/1.webp";
+import pastelMain from "../../assets/images/pastelpixels/1.webp";
+import pastelImage1 from "../../assets/images/pastelpixels/main.webp";
 import pastelImage2 from "../../assets/images/pastelpixels/2.webp";
 import pastelImage3 from "../../assets/images/pastelpixels/3.webp";
 
