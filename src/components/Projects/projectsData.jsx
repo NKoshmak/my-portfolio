@@ -105,7 +105,7 @@ export const projects = [
     video: null,
     techsteck: "Next.js, CSS3, GSAP",
     description:
-      "A custom website built for creative studio. The project focuses on a clean visual hierarchy, smooth GSAP-based animations, and a fully responsive layout. Developed with Next.js and custom CSS, the site combines strong aesthetics with production-ready front-end implementation.",
+      "A production-ready studio website built with Next.js, featuring modular components, custom CSS architecture, and GSAP-powered motion effects. The project emphasizes clean content hierarchy, scalable structure, and smooth performance across all screen sizes.",
     liveLink: "https://www.pastelpixelsstudio.com/",
     codeLink: null,
   },
