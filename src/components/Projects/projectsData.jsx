@@ -7,13 +7,13 @@
 // import astronexImage5 from "../../assets/images/AstroNex/5b.webp";
 // import astronexImageMain from "../../assets/images/AstroNex/main.webp";
 
-// import airImage1 from "../../assets/images/air/air1.webp";
-// import airImage2 from "../../assets/images/air/air2.webp";
-// import airImage3 from "../../assets/images/air/air3.webp";
-// import airImage4 from "../../assets/images/air/air4.webp";
-// import airImage5 from "../../assets/images/air/air5.webp";
-// import airImage6 from "../../assets/images/air/air6.webp";
-// import airImageMain from "../../assets/images/air/main.png";
+import airImage1 from "../../assets/images/air/air1.webp";
+import airImage2 from "../../assets/images/air/air2.webp";
+import airImage3 from "../../assets/images/air/air3.webp";
+import airImage4 from "../../assets/images/air/air4.webp";
+import airImage5 from "../../assets/images/air/air5.webp";
+import airImage6 from "../../assets/images/air/air6.webp";
+import airImageMain from "../../assets/images/air/main.png";
 
 import mybikeImage1 from "../../assets/images/myBike/1.webp";
 import mybikeImage2 from "../../assets/images/myBike/2.webp";
@@ -35,7 +35,7 @@ import radarImage4 from "../../assets/images/Radar/4.webp";
 
 // import gameImage from '../../assets/images/2048/game1.jpg';
 
-import todoImage from '../../assets/images/todo/new.png';
+// import todoImage from '../../assets/images/todo/new.png';
 
 export const projects = [
   {
@@ -84,23 +84,23 @@ export const projects = [
   //   liveLink: "https://astro-nex.netlify.app",
   //   codeLink: null,
   // },
-      {
-    image1: todoImage,
-    name: "Task Management App with API",
-    year: "2024",
-    isLarge: false,
-    images: [],
-    video: require('../../assets/images/todo/todo.mov'),
-    techsteck: 'Typescript, HTML5, CSS, SASS, React',
-    description: 'This is a task management application designed and developed to provide a seamless experience for creating, updating, and managing tasks. The app is built using React and TypeScript and integrates with an API for dynamic task handling.',
-    liveLink: "https://task-management-app-iota-roan.vercel.app",
-    codeLink: "https://github.com/NKoshmak/task-management-app"
-  },
+  //     {
+  //   image1: todoImage,
+  //   name: "Task Management App with API",
+  //   year: "2024",
+  //   isLarge: false,
+  //   images: [],
+  //   video: require('../../assets/images/todo/todo.mov'),
+  //   techsteck: 'Typescript, HTML5, CSS, SASS, React',
+  //   description: 'This is a task management application designed and developed to provide a seamless experience for creating, updating, and managing tasks. The app is built using React and TypeScript and integrates with an API for dynamic task handling.',
+  //   liveLink: "https://task-management-app-iota-roan.vercel.app",
+  //   codeLink: "https://github.com/NKoshmak/task-management-app"
+  // },
   {
     image1: pastelMain,
     name: "Pastel Pixels Studio",
     year: "2025",
-    isLarge: true,
+    isLarge: false,
     images: [pastelMain, pastelImage1, pastelImage2, pastelImage3],
     video: null,
     techsteck: "Next.js, CSS3, GSAP",
@@ -109,23 +109,19 @@ export const projects = [
     liveLink: "https://www.pastelpixelsstudio.com/",
     codeLink: null,
   },
-
-
-
-  // {
-  //   image1: airImageMain,
-  //   name: "Air",
-  //   year: "2023",
-  //   isLarge: true,
-  //   images: [airImage1, airImage2, airImage3, airImage4, airImage5, airImage6],
-  //   video: null,
-  //   techsteck: "HTML5, CSS3, SASS, BEM",
-  //   description:
-  //     "A fully responsive landing page, that ensuring seamless functionality across all screen sizes. Provide smooth navigation with links scrolling to corresponding sections, reusable components for consistency in “Who We Are” and “Our Expertise” sections, interactive slider and animated cards for an engaging user experience, functional contact forms with validation and smooth scrolling after submission.",
-  //   liveLink: "https://nkoshmak.github.io/air-landing/",
-  //   codeLink: "https://github.com/NKoshmak/air-landing",
-  // },
-
+     {
+    image1: airImageMain,
+    name: "Air",
+    year: "2023",
+    isLarge: true,
+    images: [airImage1, airImage2, airImage3, airImage4, airImage5, airImage6],
+    video: null,
+    techsteck: "HTML5, CSS3, SASS, BEM",
+    description:
+      "A fully responsive landing page, that ensuring seamless functionality across all screen sizes. Provide smooth navigation with links scrolling to corresponding sections, reusable components for consistency in “Who We Are” and “Our Expertise” sections, interactive slider and animated cards for an engaging user experience, functional contact forms with validation and smooth scrolling after submission.",
+    liveLink: "https://nkoshmak.github.io/air-landing/",
+    codeLink: "https://github.com/NKoshmak/air-landing",
+  },
   // {
   //   image1: gameImage,
   //   name: "Game 2048",
