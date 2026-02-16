@@ -48,7 +48,7 @@ export const projects = [
     techsteck: "HTML5, CSS3, JavaScript, BEM",
     description:
       "A fully responsive SaaS landing page focused on product clarity, structured content hierarchy, and conversion-driven layout. The project includes reusable UI components, pricing logic, hover interactions, optimized for seamless performance across all screen sizes.",
-    liveLink: "https://rivalradar.netlify.app",
+    liveLink: "https://radarlanding.netlify.app",
     codeLink: null,
   },
   
